@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>about</title>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+</head>
+<body>
+<div class="nav" th:fragment="header">
+    <h1>Let's Party</h1>
+    <div class="navbuttons">
+        <a class="buttonlook menuButton" th:href="@{/home}">home</a>
+        <a class="buttonlook menuButton" th:href="@{/venuelist}">venues</a>
+        <a class="buttonlook menuButton" th:href="@{/about}">about</a>
+    </div>
+</div>
+</body>
+<div th:replace="fragments/header :: header">Header</div>
+
+<div class="row1">
+    <div class="row1content">
+        <h2>About me</h2>
+    </div>
+</div>
+
+</html>
