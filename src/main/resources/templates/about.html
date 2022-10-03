@@ -6,7 +6,12 @@
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
 </head>
 <body>
-<h1>About</h1>
-<p>Welcome to the about page that gives you more explanation!</p>
+<div th:replace="fragments/header :: header">Header</div>
+
+<div class="row1">
+    <div class="row1content">
+        <h2>About me</h2>
+    </div>
+</div>
 </body>
 </html>

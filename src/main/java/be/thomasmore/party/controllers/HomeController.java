@@ -8,12 +8,21 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class HomeController {
     private final int mySpecialNumber = 35;
+    private final String[] venueNames = {"Zillion", "Carré", "Cherrymoon" , "Carat", "Boccacio" , "Cocorico", "Illusion"};
 
-    @GetMapping("/")
+
+    @GetMapping(value = {"/", "/home", "/home/"})
 
     public String home(Model model) {
         model.addAttribute( "mySpecialNumber", mySpecialNumber );
         return "home";
+    }
+
+    @GetMapping(value = {"/venuelist", "/venuelist/"})
+
+    public String venuelist(Model model){
+        model.addAttribute("venueNames", venueNames);
+        return "venuelist";
     }
 
     @GetMapping("/about")
@@ -22,11 +31,13 @@ public class HomeController {
         return "about";
     }
 
-    @GetMapping("/venuedetails/{venuename}")
+    @GetMapping(value = {"/venuedetails/{venuename}"})
     public String venuedetails(Model model, @PathVariable String venuename){
         model.addAttribute("venuename",venuename);
         return "venuedetails";
     }
+
+
 
 
 
